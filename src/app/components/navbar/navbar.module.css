@@ -1,0 +1,8 @@
+.navbar {
+    width: 100%;
+    background-color: black;
+    padding: 10pt;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+

@@ -1,0 +1,76 @@
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageContainer {
+    display: flex;
+    flex-grow: 1;
+}
+
+
+.content {
+    padding: 100px;
+
+    width: 100%;
+}
+
+.containerContent {
+    flex-direction: row;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+
+
+}
+
+.cardTable {
+    flex-direction: row;
+    width: calc(50% - 32px);
+    padding: 20px;
+    flex-grow: 0;
+    flex-basis: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    min-width: 450px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.thContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+.cardLabel {
+    padding: 10px;
+}
+
+.cardTableWrap {
+    padding: 10px;
+    width: 100%;
+
+
+}
+
+
+
+

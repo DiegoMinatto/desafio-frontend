@@ -1,0 +1,119 @@
+.containerTable {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.WrpTable {
+    border-color: #f4f4f4;
+    border-style: solid;
+    border: 1px 1px 0px 0px   ;
+
+    flex-grow: 1;
+   
+    width: 100%;
+
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+    text-align: left;
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
+}
+
+.wrpPaginacao {
+    padding: 10px;
+    width: 100%;
+    background-color: #f4f4f4;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerForm {
+    padding: 10px;
+    display: flex;
+
+}
+
+.ContainerInput {
+    display: flex;
+    flex-grow: 1;
+}
+
+.ContainerButton {
+    width: 40px;
+    height: 40px;
+    
+   
+    border-radius: .25rem;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0.8;
+}
+
+.ContainerButton[is-active="true"] { background-color: #007ad9; color: white; }
+
+.ContainerButton:hover {
+
+    opacity: 1;
+}
+
+.ContainerInput Input {
+
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+
+
+}
+
+.ContainerInput select {
+
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+
+
+
+}
+
