@@ -11,11 +11,8 @@
   flex-grow: 1;
 }
 
-
-
 .content {
   padding: 100px;
-  
   width: 100%;
 }
 
@@ -26,8 +23,6 @@
   flex-wrap: wrap;
   gap: 32px;
   justify-content: center;
- 
-  
 }
 
 .cardTable {
@@ -60,7 +55,6 @@
   background-color: #f2f2f2;
 }
 
-
 .cardLabel {
   padding: 10px;
 }
@@ -68,8 +62,6 @@
 .cardTableWrap {
   padding: 10px;
   width: 100%;
-
-
 }
 
 .ContainerForm {
@@ -98,12 +90,10 @@
 }
 
 .ContainerButton:hover {
-
   opacity: 1;
 }
 
 .ContainerInput Input {
-
   width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -113,10 +103,7 @@
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-  
-
 }
-
 .ContainerInput select {
 
   display: block;
@@ -129,12 +116,7 @@
   background-color: #fff;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-
-
-
 }
-
-
 .table td, .table th {
   padding: .75rem;
   vertical-align: top;

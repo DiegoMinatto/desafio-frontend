@@ -18,7 +18,7 @@ interface iTableData {
 export interface iChangeProps {
   year: string;
   winner: string;
-  pagina: number;
+  page: number;
 }
 
 interface iProps {
@@ -28,19 +28,34 @@ interface iProps {
 }
 
 export default function ListTable(props: iProps) {
-  const [pagina, setPagina] = useState<number>(0);
-  const [len, setLen] = useState<number>(props.dataLen);
+  const [page, setpage] = useState<number>(0);
+  const [len, setLen] = useState<number>(0);
 
   const [year, setYear] = useState<string>("");
   const [winner, setWinner] = useState<string>("");
 
-  const trocaPagina = (pagina: number) => {
-    setPagina(pagina);
+  const trocapage = (page: number) => {
+    setpage(page);
   };
 
   useEffect(() => {
-    props.onChange({ pagina, year, winner });
-  }, [pagina, year, winner]);
+    setLen(props.dataLen)
+  }, [props.dataLen])
+
+  useEffect(() => {
+
+    props.onChange({ page, year, winner });
+    setpage(0);
+
+  }, [ year, winner]);
+
+
+  useEffect(() => {
+
+    props.onChange({ page, year, winner });
+  
+
+  }, [page]);
 
   return (
     <div className={styles.containerTable}>
@@ -96,10 +111,10 @@ export default function ListTable(props: iProps) {
           </tbody>
         </table>
       </div>
-      <div className={styles.wrpPaginacao}>
+      <div className={styles.wrppagecao}>
         <div
           onClick={() => {
-            trocaPagina(0);
+            trocapage(0);
           }}
           className={styles.ContainerButton}
         >
@@ -108,114 +123,127 @@ export default function ListTable(props: iProps) {
 
         <div
           onClick={() => {
-            if (pagina - 1 > -1) trocaPagina(pagina - 1);
+            if (page - 1 > -1) trocapage(page - 1);
           }}
           className={styles.ContainerButton}
         >
           <IoCaretBack color="#848587" size={15} />
         </div>
 
-        {pagina < Math.ceil(len / 10) - 3 ? (
+        {page < Math.ceil(len / 10) - 4 ? (
           <>
             <div
-              is-active={pagina < Math.ceil(len / 10) - 3 ? "true" : "false"}
+              is-active={page < Math.ceil(len / 10) - 3 ? "true" : "false"}
               className={styles.ContainerButton}
             >
-              <span>{pagina + 1}</span>
+              <span>{page + 1}</span>
             </div>
 
             <div
               onClick={() => {
-                trocaPagina(pagina + 1);
+                trocapage(page + 1);
               }}
               className={styles.ContainerButton}
             >
-              <span>{pagina + 2}</span>
+              <span>{page + 2}</span>
             </div>
 
             <div
               onClick={() => {
-                trocaPagina(pagina + 2);
+                trocapage(page + 2);
               }}
               className={styles.ContainerButton}
             >
-              <span>{pagina + 3}</span>
+              <span>{page + 3}</span>
             </div>
 
             <div
               onClick={() => {
-                trocaPagina(pagina + 3);
+                trocapage(page + 3);
               }}
               className={styles.ContainerButton}
             >
-              <span>{pagina + 4}</span>
+              <span>{page + 4}</span>
             </div>
 
             <div
               onClick={() => {
-                trocaPagina(pagina + 4);
+                trocapage(page + 4);
               }}
               className={styles.ContainerButton}
             >
-              <span>{pagina + 5}</span>
+              <span>{page + 5}</span>
             </div>
           </>
         ) : (
           <>
-            <div
-              onClick={() => {
-                trocaPagina(Math.ceil(len / 10) - 5);
-              }}
-              className={styles.ContainerButton}
-            >
-              <span>{Math.ceil(len / 10) - 5}</span>
-            </div>
+
+
+            {(Math.ceil(len / 10) - 4) > 0 ?
+
+              <div
+                onClick={() => {
+                  trocapage(Math.ceil(len / 10) - 5);
+                }}
+                className={styles.ContainerButton}
+                is-active={page === Math.ceil(len / 10) - 5 ? "true" : "false"}
+              >
+                
+                <span>{Math.ceil(len / 10) - 4}</span>
+              </div>
+
+              : null}
+
+            {(Math.ceil(len / 10) - 3) > 0 ?
+              <div
+                onClick={() => {
+                  trocapage(Math.ceil(len / 10) - 4);
+                }}
+                is-active={page === Math.ceil(len / 10) - 4 ? "true" : "false"}
+                className={styles.ContainerButton}
+              >
+                <span>{Math.ceil(len / 10) - 3}</span>
+              </div>
+              : null}
+
+            {(Math.ceil(len / 10) - 2) > 0 ?
+              <div
+                onClick={() => {
+                  trocapage(Math.ceil(len / 10) - 3);
+                }}
+                is-active={page === Math.ceil(len / 10) - 3 ? "true" : "false"}
+                className={styles.ContainerButton}
+              >
+                <span>{Math.ceil(len / 10) - 2}</span>
+              </div>
+              : null}
+            {(Math.ceil(len / 10) - 1) > 0 ?
+              <div
+                onClick={() => {
+                  trocapage(Math.ceil(len / 10) - 2);
+                }}
+                is-active={page === Math.ceil(len / 10) - 2 ? "true" : "false"}
+                className={styles.ContainerButton}
+              >
+                <span>{Math.ceil(len / 10) - 1}</span>
+              </div>
+              : null}
 
             <div
               onClick={() => {
-                trocaPagina(Math.ceil(len / 10) - 4);
+                trocapage(Math.ceil(len / 10) - 1);
               }}
-              is-active={pagina === Math.ceil(len / 10) - 4 ? "true" : "false"}
+              is-active={page === Math.ceil(len / 10) - 1 ? "true" : "false"}
               className={styles.ContainerButton}
             >
-              <span>{Math.ceil(len / 10) - 4}</span>
-            </div>
-
-            <div
-              onClick={() => {
-                trocaPagina(Math.ceil(len / 10) - 3);
-              }}
-              is-active={pagina === Math.ceil(len / 10) - 3 ? "true" : "false"}
-              className={styles.ContainerButton}
-            >
-              <span>{Math.ceil(len / 10) - 3}</span>
-            </div>
-
-            <div
-              onClick={() => {
-                trocaPagina(Math.ceil(len / 10) - 2);
-              }}
-              is-active={pagina === Math.ceil(len / 10) - 2 ? "true" : "false"}
-              className={styles.ContainerButton}
-            >
-              <span>{Math.ceil(len / 10) - 2}</span>
-            </div>
-
-            <div
-              onClick={() => {
-                trocaPagina(Math.ceil(len / 10) - 1);
-              }}
-              is-active={pagina === Math.ceil(len / 10) - 1 ? "true" : "false"}
-              className={styles.ContainerButton}
-            >
-              <span>{Math.ceil(len / 10) - 1}</span>
+              <span>{Math.ceil(len / 10)}</span>
             </div>
           </>
         )}
 
         <div
           onClick={() => {
-            if (Math.ceil(len / 10) - 1 >= pagina + 1) trocaPagina(pagina + 1);
+            if (Math.ceil(len / 10) - 1 >= page + 1) trocapage(page + 1);
           }}
           className={styles.ContainerButton}
         >
@@ -224,7 +252,7 @@ export default function ListTable(props: iProps) {
 
         <div
           onClick={() => {
-            trocaPagina(Math.ceil(len / 10) - 1);
+            trocapage(Math.ceil(len / 10) - 1);
           }}
           className={styles.ContainerButton}
         >

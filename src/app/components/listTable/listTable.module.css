@@ -8,11 +8,8 @@
     border-color: #f4f4f4;
     border-style: solid;
     border: 1px 1px 0px 0px   ;
-
     flex-grow: 1;
-   
     width: 100%;
-
 }
 
 .table {
@@ -43,7 +40,7 @@
     border: 1px solid #dee2e6;
 }
 
-.wrpPaginacao {
+.wrppagecao {
     padding: 10px;
     width: 100%;
     background-color: #f4f4f4;
@@ -57,7 +54,6 @@
 .ContainerForm {
     padding: 10px;
     display: flex;
-
 }
 
 .ContainerInput {
@@ -68,8 +64,6 @@
 .ContainerButton {
     width: 40px;
     height: 40px;
-    
-   
     border-radius: .25rem;
     cursor: pointer;
     justify-content: center;
@@ -81,12 +75,10 @@
 .ContainerButton[is-active="true"] { background-color: #007ad9; color: white; }
 
 .ContainerButton:hover {
-
     opacity: 1;
 }
 
 .ContainerInput Input {
-
     width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -96,12 +88,9 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-
-
 }
 
 .ContainerInput select {
-
     display: block;
     width: 100%;
     padding: .375rem 2.25rem .375rem .75rem;
@@ -112,8 +101,5 @@
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-
-
-
 }
 

@@ -19,7 +19,7 @@
     margin-bottom: 4px;
 }
 
-.sidebarLabelContainer[is-selected="true"]{
+.sidebarLabelContainer[is-selected="true"] {
     color: #098ae1;
 }
 

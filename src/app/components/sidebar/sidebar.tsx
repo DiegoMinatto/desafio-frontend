@@ -4,10 +4,6 @@ import * as React from 'react';
 import styles from "./sidebar.module.css";
 import { usePathname } from 'next/navigation';
 
-
-
-
-
 const comparePath = (path: string, compare: string) => {
     return path == compare;
 }
@@ -22,7 +18,7 @@ export default function AppSidebar() {
             <ul className={styles.sidebarItemContainer}>
                 <li className={styles.sidebarItem}>
                     <a href='/'>
-                        <div className={styles.sidebarLabelContainer} is-selected={`${comparePath(pathname, '/')  ? "true" : "false"}`}>
+                        <div className={styles.sidebarLabelContainer} is-selected={`${comparePath(pathname, '/') ? "true" : "false"}`}>
                             <span>Dashboard</span>
                         </div>
                     </a>

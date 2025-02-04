@@ -117,12 +117,12 @@ const MockList = {
 
 describe("ListTable", () => {
   it("renders", () => {
-    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => {}}  />);
+    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => { }} />);
   });
 
 
   it("renders table headings", () => {
-    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => {}}  />);
+    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => { }} />);
     expect(screen.getByText("ID")).toBeInTheDocument();
     expect(screen.getByText("Year")).toBeInTheDocument();
     expect(screen.getByText("Tittle")).toBeInTheDocument();
@@ -132,7 +132,7 @@ describe("ListTable", () => {
 
 
   it("render rows", () => {
-    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => {}}  />);
+    render(<ListTable data={MockList.content} dataLen={MockList.numberOfElements} onChange={() => { }} />);
     expect(screen.getByText("Can't Stop the Music")).toBeInTheDocument();
     expect(screen.getByText("Xanadu")).toBeInTheDocument();
   });

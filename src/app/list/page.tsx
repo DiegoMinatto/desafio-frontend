@@ -1,9 +1,8 @@
 'use client'
-import Image from "next/image";
-import styles from "./page.module.css";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ListTable, { iChangeProps } from "../components/listTable/listTable";
+import { fetchData } from "../api/apiService";
 
 interface iTableData {
   id: number;
@@ -14,38 +13,27 @@ interface iTableData {
 
 export default function list() {
 
-  
-  const [len, setLen] = useState<number>(100);
+  const [len, setLen] = useState<number>(1);
   const [tableData, setTableData] = useState<iTableData[]>([])
 
-  const buscaDados = async (pagina: number, year: string, winner: string) => {
+  const getData = async (page: number, year: string, winner: string) => {
 
     const params = new URLSearchParams();
-
-    params.append("page", `${pagina}`);
+    params.append("page", `${page}`);
     params.append("size", "10");
     if (winner)
       params.append("winner", winner);
     if (year)
       params.append("year", year);
-    let data = await fetch(`https://challenge.outsera.tech/api/movies?${params.toString()}`)
-    let posts = await data.json()
+
+    let posts = await fetchData<any>(params.toString());
 
     setLen(posts.totalElements)
     setTableData(posts.content)
 
-    
-
-
-
   }
 
-
-
   return (
-
-
-
-    <ListTable data={tableData} dataLen={len} onChange={(values: iChangeProps) => {buscaDados(values.pagina, values.year, values.winner)}}  />
+    <ListTable data={tableData} dataLen={len} onChange={(values: iChangeProps) => { getData(values.page, values.year, values.winner) }} />
   );
 }

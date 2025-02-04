@@ -27,21 +27,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className={styles.page}>
-
           <AppNavbar />
-
           <div className={styles.pageContainer}>
-
             <AppSidebar />
-
             <div className={styles.content}>
-
               {children}
-
             </div>
-
           </div>
-
         </div>
       </body>
     </html>
